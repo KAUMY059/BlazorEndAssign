@@ -1,0 +1,25 @@
+@page "/event-card"
+
+<h3>Event Card</h3>
+
+<div>
+    <input @bind="eventName" placeholder="Enter Event Name" />
+    <input @bind="eventDate" type="date" placeholder="Enter Event Date"/>
+    <button @onclick="ShowDetails">Submit</button>
+</div>
+
+@if (!string.IsNullOrEmpty(eventName))
+{
+    <p><strong>Event:</strong> @eventName</p>
+    <p><strong>Date:</strong> @eventDate</p>
+}
+
+@code {
+    private string eventName;
+    private string eventDate;
+
+    private void ShowDetails()
+    {
+        // Display event details (already handled in the UI)
+    }
+}
